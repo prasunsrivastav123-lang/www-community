@@ -46,11 +46,6 @@ begin with any of the following characters:
 - Full-width (double-byte) variants of formula-initiating characters such as
   `＝`, `＋`, `－`, and `＠`, which may be interpreted as formulas in some locales
   (e.g., Japanese environments).
-<<<<<<< HEAD
-=======
-
-Keep in mind that it is not sufficient to make sure that the untrusted user input does not start with these characters. You also need to take care of the field separator (e.g., '`,`', or '`;`') and quotes (e.g., `'`, or `"`), as attackers could use this to start a new cell and then have the dangerous character in the middle of the user input, but at the beginning of a cell.
->>>>>>> 3bbb19b (Document Excel save/reopen behavior and Excel-resistant CSV injection mitigation)
 
 Alternatively, apply the following sanitization to each field of the CSV, so that their content will be read as text by the spreadsheet editor:
 * Wrap each cell field in double quotes
